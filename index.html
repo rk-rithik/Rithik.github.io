@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rithik J — Introduction</title>
+  <style>
+    :root{--bg:#f7fafc;--card:#ffffff;--accent:#0ea5a4;--muted:#6b7280}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:var(--bg);color:#111}
+    .wrap{max-width:720px;margin:48px auto;padding:24px}
+    .card{background:var(--card);border-radius:12px;padding:28px;box-shadow:0 6px 20px rgba(2,6,23,0.08)}
+    h1{margin:0 0 8px;font-size:1.6rem}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+    .badge{background:linear-gradient(90deg,rgba(14,165,164,0.12),rgba(14,165,164,0.06));color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600;font-size:0.85rem}
+    .meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:0.9rem}
+    pre{background:#0f1724;color:#e6eef3;padding:12px;border-radius:8px;overflow:auto}
+    .actions{margin-top:18px}
+    button{background:var(--accent);color:white;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+    footer{margin-top:20px;font-size:0.85rem;color:var(--muted)}
+    @media (max-width:520px){.wrap{margin:20px;padding:16px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <article class="card">
+      <h1>Hi — I'm <strong>Rithik J</strong></h1>
+      <p class="lead">A Cyber Security student at <strong>SRM VEC Engineering College, Chennai</strong>. I have completed Python and Java Developer certifications and enjoy building secure applications and learning about cyber defense.</p>
+
+      <div class="badges">
+        <span class="badge">SRM VEC, Chennai</span>
+        <span class="badge">Cyber Security</span>
+        <span class="badge">Python Certified</span>
+        <span class="badge">Java Developer</span>
+      </div>
+
+      <div class="meta">
+        <div>🎓 <strong>Course:</strong>&nbsp;Cyber Security</div>
+        <div>💻 <strong>Skills:</strong>&nbsp;Python, Java</div>
+      </div>
+
+      <div class="actions">
+        <button id="copyBtn">Copy Intro Text</button>
+      </div>
+
+      <pre id="introText">I am Rithik J from SRM VEC Engineering College, Chennai. I am part of the Cyber Security group, and I have completed my Python and Java Developer certifications.</pre>
+
+      <footer>Want this as a GitHub README, LinkedIn bio, or a printable PDF? Ask and I’ll make it.</footer>
+    </article>
+  </main>
+
+  <script>
+    const btn = document.getElementById('copyBtn');
+    const txt = document.getElementById('introText').innerText;
+    btn.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(txt);
+        btn.textContent = 'Copied!';
+        setTimeout(()=> btn.textContent = 'Copy Intro Text',1400);
+      }catch(e){
+        alert('Unable to copy — select and copy manually.');
+      }
+    });
+  </script>
+</body>
+</html>
